@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Electron App Template — CRUD Personajes</title>
+
+  <!-- Estilos globales -->
+  <link rel="stylesheet" href="./../styles/globals.css" />
+
+</head>
+<body>
+
+  <main class="container">
+    <header class="header">
+      <h1>Actions in Server.</h1>
+      <p class="subtitle">
+        Backend local vía IPC (sin HTTP)
+      </p>
+    </header>
+
+    <!-- FORM -->
+    <section class="form">
+
+      <div class="field">
+        <label for="id">
+          <b>
+            ID:
+          </b>
+        </label>
+        <input id="id" type="number" placeholder="ID del personaje" />
+      </div>
+
+      <div class="field">
+        <label for="nombre">
+          <b>
+            Nombre:
+          </b>
+        </label>
+        <input id="nombre" type="text" placeholder="Nombre" />
+      </div>
+
+      <div class="field">
+        <label for="edad">
+          <b>
+            Edad:
+          </b>
+        </label>
+        <input id="edad" type="number" placeholder="Edad" />
+      </div>
+
+    </section>
+
+    <!-- ACTIONS -->
+    <section class="crud-actions">
+      <button id="btn-create" class="btn primary">Create</button>
+      <button id="btn-update" class="btn warning">Update</button>
+    </section>
+
+    <!-- TABLA DE PERSONAJES -->
+    <section>
+      <h3>Lista de Personajes:</h3>
+
+      <table class="crud-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+
+        <tbody id="tabla-personajes">
+          <!-- Aquí se llenará dinámicamente -->
+        </tbody>
+      </table>
+    </section>
+
+    <!-- OUTPUT -->
+    <section class="output">
+      <pre id="output">// Aquí se mostrará la respuesta</pre>
+    </section>
+
+    <section class="card">
+
+      <div class="actions">
+        <button id="btnFullscreen">
+          Toggle Fullscreen
+        </button>
+
+        <button id="closeBtn" class="danger">
+          Close App
+        </button>
+      </div>
+    </section>
+
+    <section class="links">
+      <a href="index.html">← Regresar a Home</a>
+      <a href="about.html">Ir a About →</a>
+    </section>
+
+    <footer class="footer">
+      <a
+        href="https://github.com/SamuelDzibLopez/electron-app-template"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="GitHub"
+      >
+        <img src="./../assets/icons/icon-github-white.svg" alt="GitHub" />
+      </a>
+    </footer>
+
+  </main>
+
+  <script type="module" src="./../js/globals.js"></script>
+  <script type="module" src="./../js/personajes.js"></script>
+</body>
+</html>

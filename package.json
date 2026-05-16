@@ -1,0 +1,52 @@
+{
+  "type": "module",
+  "name": "electron-app-template",
+  "version": "2.0.1",
+  "description": "Locura verdad",
+  "main": "src/main/index.js",
+  "scripts": {
+    "start": "electron .",
+    "postinstall": "electron-rebuild",
+    "build": "electron-builder",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ksino",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^40.0.0",
+    "electron-builder": "^26.4.0",
+    "electron-rebuild": "^3.2.9"
+  },
+  "build": {
+    "appId": "com.ksino.tujuego",
+    "productName": "ksino",
+    "copyright": "Copyright © 2026 ksino",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "publish": {
+      "provider": "github",
+      "owner": "luciano1233456",
+      "repo": "ksino"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "C:/Users/camil/Desktop/my_icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "ksino"
+    }
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.6.2",
+    "picocolors": "^1.1.1"
+  }
+}

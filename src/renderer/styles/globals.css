@@ -1,0 +1,297 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  white-space: normal;        /* permite saltos de línea */
+  overflow-wrap: break-word;  /* rompe palabras largas */
+  word-break: break-word;   
+}
+
+/* Variables globales */
+:root {
+  --bg: #0f172a;
+  --card: #020617;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --primary: #38bdf8;
+  --danger: #ef4444;
+  --border: #1e293b;
+  --radius: 12px;
+}
+
+/* Body */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+
+  background: linear-gradient(180deg, #020617, #0f172a);
+  color: var(--text);
+  min-height: 100vh;
+  -ms-overflow-style: none;
+}
+
+/* Chrome, Edge, Electron */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* Layout */
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 64px 24px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Header */
+.header h1 {
+  font-size: 2.5rem;
+  letter-spacing: -0.03em;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.subtitle span {
+  color: var(--primary);
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+/* Card */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.info {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+button.danger:hover {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+/* Links */
+.links {
+  display: flex;
+  gap: 16px;
+}
+
+.links a {
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+  margin-top: 3rem;
+  padding: 1.5rem 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+.footer img {
+  width: 30px;
+  height: 30px;
+
+  opacity: 0.85;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.github-icon-link:hover img {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.github-text-link {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-weight: 500;
+
+  position: relative;
+}
+
+.github-text-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+
+  width: 0;
+  height: 2px;
+  background-color: #60a5fa;
+
+  transition: width 0.25s ease;
+}
+
+.github-text-link:hover::after {
+  width: 100%;
+}
+
+/* =========================
+   FORM
+========================= */
+.form {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.field input {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #111;
+  color: #fff;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.crud-actions {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: #2a2a2a;
+  color: #fff;
+  transition: transform 0.1s ease, opacity 0.1s ease;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn.primary {
+  background: #2563eb;
+}
+
+.btn.warning {
+  background: #ca8a04;
+}
+
+.btn.danger {
+  background: #dc2626;
+}
+
+.output pre {
+  background: #0b0b0b;
+  padding: 1rem;
+  border-radius: 8px;
+  max-height: 300px;
+  overflow: auto;
+  font-size: 0.85rem;
+}
+
+.crud-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: #1e1e1e;
+  color: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+  
+.crud-table th, .crud-table td {
+  cursor: pointer;
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #333;
+}
+  
+.crud-table th {
+  background: #333;
+}
+  
+.crud-table tr:hover {
+  background: #2a2a2a;
+}
+  
+.btn-delete-row {
+  background: #c0392b;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+  
+.btn-delete-row:hover {
+  background: #e74c3c;
+}

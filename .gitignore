@@ -1,0 +1,17 @@
+# Dependencies
+/node_modules/
+
+# Build / dist
+/dist/
+/out/
+/release/
+
+# Electron
+*.log
+
+# Environment
+.env
+
+# OS
+.DS_Store
+Thumbs.db
